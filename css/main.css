@@ -1,0 +1,362 @@
+/* основной цвет + номер телефона в шапке #757575 */
+/* цвет акцент #2196F3 */
+/* белый #ffffff */
+/* цвет заголовков #212121 */
+/* футер rgba(255,255,255,0.6) */
+
+:root {
+  --primary-text-color: #757575;
+  --title-text-color: #212121;
+  --accent-text-color: #2196f3;
+  --primary-white-color: #ffffff;
+  --accent-section-color: #f5f4fa;
+  --accent-icon-color:#AFB1B8;
+}
+/* html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+} */
+
+body {
+  font-family: Roboto, sans-serif;
+  background-color: var(--primary-white-color);
+  color: var(--primary-text-color);
+}
+/* Утилиты */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+/* Скрывает ненужный элемент (скрытые заголовки) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+p {
+  margin: 0;
+}
+/* Main nav */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+/*Логотип*/
+.logo {
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+.logo-footer {
+  display: block;
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.logo-web {
+  color: #2196f3;
+}
+.logo-studio {
+  color: black;
+}
+.logo-foot {
+  color: var(--primary-white-color);
+}
+/* Навигация сайта */
+.site-nav .link {
+  display: inline-flex;;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: var(--title-text-color);
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.site-nav {
+  display: flex;
+  margin-left: 86px;
+}
+.icon-mail{
+  fill: var(--primary-text-color);
+  margin-right: 10px;
+}
+.icon-phone{
+  fill: var(--primary-text-color);
+  margin-right: 10px;
+}
+.mail:hover .icon-mail,
+.phone:hover .icon-phone,
+.mail:focus .icon-mail,
+.phone:focus .icon-phone{
+  fill: var(--accent-text-color);
+}
+
+
+/* .mail.link::before{
+  content: "";
+  width: 16px;
+  height: 11px;
+  display: inline-block;
+  margin-right: 10px;
+  background-image: url('../img/header/email.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+} */
+/* .phone.link::before{
+  content: "";
+  width: 10px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 10px;
+  background-image: url('../img/header/phone.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+} */
+/* Альтернативный вариант */
+/* .site-nav .item:not(:last-child) {
+  margin-right: 50px;
+} */
+.site-nav .item + .item {
+  margin-left: 50px;
+}
+/* Cont nav */
+.cont-nav {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+.cont-nav .link {
+  display: inline-flex;
+  align-items: center;
+}
+.cont-nav .item + .item {
+  margin-left: 50px;
+}
+.link {
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
+.site-nav .current{
+  color: var(--accent-text-color);
+}
+.link:hover,
+.link:focus,
+.studio :hover,
+.studio:focus,
+.portfolio:hover,
+.portfolio:focus,
+.contact:hover {
+  color: var(--accent-text-color);
+}
+.button.secondary{ 
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  align-items: center;
+  letter-spacing: 0.06em;
+  color: var(--primary-white-color);
+  background-color: var(--accent-text-color);
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 50px;
+  padding: 10px 29px;
+  display: inline-flex;
+  min-width: 200px;
+}
+.button.secondary .icon-button{
+  fill:var(--primary-white-color);
+}
+.button.secondary:hover, .button.secondary:focus{
+  background-color:var(--primary-white-color);
+  color:var(--accent-text-color);
+  fill:var(--accent-text-color);
+}
+.button.secondary:hover .icon-button{
+  fill: var(--accent-text-color);
+}
+/* Добавление иконки на кнопку через пседоэлементы */
+/* .button.secondary::after{
+  content: "";
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  background-image: url('../img/footer/icon_send.svg');
+  background-size: contain;
+  cursor: pointer;
+} */
+.icon-button{
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+/* Футер */
+footer {
+  background-color: #2f303a;
+  color: var(--primary-white-color);
+}
+.page-footer {
+  display: flex;
+  align-items: baseline;
+  padding-top: 48px;
+  justify-content: space-between;
+}
+/* .footer-address {
+  margin-right: 69px;
+  } */
+
+.address-container {
+    font-size: 14px;
+    line-height: 1.7;
+    font-style: normal;
+}
+.add {
+      margin-top: 0;
+      margin-bottom: 9px;
+ }
+ .add-link{
+   display: inline-block;
+ }
+ .add-link:not(:last-child){
+   margin-bottom: 9px;
+ }
+}
+.footer-slikns {
+  padding-bottom: 21px;
+  margin-right: 93px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+/* Добавляет фон для иконок соц.сетей в футере */
+.slikns-list .icon-slinks{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+.slikns-list .icon-slinks:hover, 
+.slikns-list .icon-slinks:focus{
+  background-color: var(--accent-text-color);
+}
+.slikns-list .icon-slinks{
+  fill: var(--primary-white-color);
+}
+/* Добаление иконок соц.сетей */
+/* .icon-instagram{
+  background-image: url(../img/footer/instagram.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+.icon-twitter{
+  background-image: url(../img/footer/twitter.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+.icon-facebook{
+  background-image: url(../img/footer/facebook.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+.icon-linkedln{
+  background-image: url(../img/footer/linkedin.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+} */
+
+/* Добавление отступов каждому элементу списка соц.сетей */
+  .slikns-links:not(:last-child) {
+    margin-right: 10px;
+}
+ .slikns-text {
+  margin-bottom: 21px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+} 
+.icon-slink{
+  width: 20px;
+  height: 20px;
+}
+.email-input {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    line-height: 1.87;
+    display: inline-block;
+    min-width: 358px;
+    padding: 10px 58px 10px 12px;
+    border-radius: 4px;
+    border-style: solid;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    background-color: var(--foot-primery-color);
+    border-image: initial;
+}
+.copyringht {
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 18px;
+  padding-bottom: 21px;
+  font-size: 12px;
+  line-height: 2;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
